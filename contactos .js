@@ -27,4 +27,4 @@ function printContact() {
         console.log(element)
     }
 }
-console.log(printContact())
+printContact()
