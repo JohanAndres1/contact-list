@@ -1,25 +1,25 @@
-const contactos = [["Johan Sierra", 3209455922], ["Camila Lopez", 3192317547], ["Marcela Corredor", 3209847209]]
+const contactos = ["Johan Sierra", "Hanne Sierra", "Marcela Corredor", "Miguel Sierra"]
 
 
 // Funcion para crear un nuevo contacto
 
-function newContact(nombre, numero) {
-    contactos.push([nombre, numero])
+function newContact(nombre) {
+    contactos.push(nombre)
+    console.log(contactos)
 }
-const nuevoContacto = newContact("Jonnathan Corredor", 3145867221)
-console.log(contactos)
+newContact("Jonnathan Corredor")
 
 
 // Funcion para eliminar un contacto
 
-function deleteContact() {
-    contactos.shift()
+function deleteContact(contactoAEliminar) {
+    contactos.splice(contactoAEliminar,1)
+    console.log(contactos)
 }
-const borrarContacto = deleteContact()
-console.log(contactos)
+deleteContact(0)
 
 
-// Funcion para crear un nuevo contacto
+// Funcion para imprimir un contacto un nuevo contacto
 
 function printContact() {
     for (let i = 0; i < contactos.length; i++) {
@@ -27,4 +27,4 @@ function printContact() {
         console.log(element)
     }
 }
-console.log(printContact())
+printContact()
