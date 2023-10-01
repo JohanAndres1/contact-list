@@ -62,9 +62,6 @@ function deleteContact(contactoAEliminar) {
     // } else {
     //     console.log("No has eliminado nigun contacto")
     // }
-    
-    contactos.splice(contactoEliminado,1)
-    console.log("Lista de contactos actucalizada", contactos)
 }
 deleteContact("Johan")
 
@@ -78,3 +75,13 @@ function printContact() {
     }
 }
 printContact()
+
+
+// Funcion para actualizar un contacto
+
+function update(id, propiedad, actualizar) {
+    const actualiza = contactos.findIndex((contacto) => contacto.id === id)
+    contactos[actualiza][propiedad] = actualizar
+    console.log(`Has actualizado al contacto con el ID: ${id}`, contactos[actualiza])
+}
+update(2, "nombres", "Camila")
