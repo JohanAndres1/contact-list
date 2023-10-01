@@ -1,22 +1,72 @@
-const contactos = ["Johan Sierra", "Hanne Sierra", "Marcela Corredor", "Miguel Sierra"]
+const contactos = [
+    {
+        id: 1,
+        nombres: "Johan",
+        apellidos: "Sierra",
+        telefono: 324672456,
+        ubicacion: [ "Bogota", "Cr 24 #5-07sur"]
+    },
+    {
+        id: 2,
+        nombres: "Hanne",
+        apellidos: "Sierra",
+        telefono: 321024674,
+        ubicacion: [ "Bogota", "Carreara 12 #12-5"]
+    },
+    {
+        id: 3,
+        nombres: "Marcela",
+        apellidos: "Corredor",
+        telefono: 320939386,
+        ubicacion: [ "Bogota", "Calle 24f #13-32"]
+    },
+    {
+        id: 4,
+        nombres: "Miguel",
+        apellidos: "Lopez",
+        telefono: 319274918,
+        ubicacion: [ "Bogota", "Cl 77 #5-07"]
+    }
+]
 
 
 // Funcion para crear un nuevo contacto
 
-function newContact(nombre) {
-    contactos.push(nombre)
+function newContact(id, nombre, apelllido, telefono, ciudad, direccion) {
+    contactos.push(
+        {
+            id: id,
+            nombres: nombre,
+            apellidos: apelllido,
+            teléfono: telefono,
+            ubicaciones: [ ciudad , direccion]
+        }
+    )
     console.log(contactos)
 }
-newContact("Jonnathan Corredor")
+newContact(5,"Jonnathan", "Sierra", 301238913, "Bogota", "Calle 32 #19-9")
 
 
 // Funcion para eliminar un contacto
 
 function deleteContact(contactoAEliminar) {
-    contactos.splice(contactoAEliminar,1)
-    console.log(contactos)
+    let contactoEliminado = contactos.filter(contacto => contacto.nombres == contactoAEliminar)
+    console.log("Vas a eliminar este contacto", contactoEliminado)
+    
+// Este bloque de codigo le da la opcion al usuario si quiere eliminar el contacto o no
+
+    // let respuesta = prompt("Lo quieres eliminar?").toLowerCase()
+    // if (respuesta == "si") {
+    //     contactos.splice(contactoEliminado,1)
+    //     console.log("Lista de contactos actucalizada", contactos)
+    // } else {
+    //     console.log("No has eliminado nigun contacto")
+    // }
+    
+    contactos.splice(contactoEliminado,1)
+    console.log("Lista de contactos actucalizada", contactos)
 }
-deleteContact(0)
+deleteContact("Johan")
 
 
 // Funcion para imprimir un contacto un nuevo contacto
